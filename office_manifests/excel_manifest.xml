@@ -82,7 +82,7 @@
             <Metadata>
               <SourceLocation resid="Functions.Metadata.Url" />
             </Metadata>
-            <!-- <Namespace resid="Functions.Namespace" /> -->
+            <Namespace resid="Functions.Namespace" />
           </ExtensionPoint>
         </AllFormFactors>
 
@@ -167,16 +167,23 @@
           DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-        <bt:Url id="Functions.Metadata.Url"
+        <!-- <bt:Url id="Functions.Metadata.Url"
           DefaultValue="https://localhost:3000/static/public/functions.json" />
         <bt:Url id="Functions.Script.Url"
-        DefaultValue="https://localhost:3000/static/public/functions.js" />
+          DefaultValue="https://localhost:3000/static/public/functions.js" /> -->
+
+        <bt:Url id="Functions.Metadata.Url"
+          DefaultValue="https://localhost:3000/static/custom_functions/functions.json" />
+        <bt:Url id="Functions.Script.Url"
+          DefaultValue="https://localhost:3000/static/custom_functions/functions.js" />
+
+
       </bt:Urls>
       <!-- ShortStrings max characters==125. -->
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group" />
-        <bt:String id="Functions.Namespace" DefaultValue="CONTOSO" />
+        <bt:String id="Functions.Namespace" DefaultValue="ADDIN" />
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane" />
       </bt:ShortStrings>
 

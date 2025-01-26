@@ -51,7 +51,7 @@ export default defineConfig({
 		strictPort: false,
 		open: "/", // opens the correct /taskpane.html when opening browser to view in web
 		fs: {
-			allow: ['./static/public']
+			allow: ['./static/custom_functions']
 		}
 	},
 	preview: {

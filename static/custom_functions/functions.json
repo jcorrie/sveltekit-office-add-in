@@ -22,6 +22,21 @@
             }
         },
         {
+            "description": "Say hello",
+            "id": "HELLO",
+            "name": "HELLO",
+            "parameters": [
+                {
+                    "description": "The name to say hello to",
+                    "name": "name",
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
             "description": "Returns data for a given category.",
             "id": "GETDATA",
             "name": "GETDATA",

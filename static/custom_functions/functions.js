@@ -15,6 +15,19 @@ function add(first, second) {
     return first + second;
 }
 
+
+
+/**
+ * Say hello.
+ * @customfunction
+ * @param name Name
+ * @returns Greeting
+ */
+
+function hello(name) {
+    return `Hello ${name}`;
+}
+
 /**
  * Returns data for a given category.
  * @customfunction
@@ -53,4 +66,5 @@ function getData(category) {
 }
 
 CustomFunctions.associate("ADD", add);
+CustomFunctions.associate("HELLO", hello);
 CustomFunctions.associate("GETDATA", getData);
