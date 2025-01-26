@@ -15,7 +15,9 @@ async function getHttpsOptions() {
 
 
 export default defineConfig({
+
 	plugins: [sveltekit(),
+
 	createHtmlPlugin({
 		minify: true,
 		pages: [
@@ -48,6 +50,9 @@ export default defineConfig({
 		port: 3000,
 		strictPort: false,
 		open: "/", // opens the correct /taskpane.html when opening browser to view in web
+		fs: {
+			allow: ['./static/public']
+		}
 	},
 	preview: {
 		https: await getHttpsOptions(),
