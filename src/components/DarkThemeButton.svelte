@@ -73,7 +73,7 @@
 
 <button
 	onclick={handleThemeChange}
-	class="theme-button bg-slate-600 dark:bg-primary-200 text-secondary-600"
+	class="theme-button hover:text-primary-700 dark:hover:text-primary-300"
 >
 	{#if navbarTheme == Theme.DARK}
 		<svg
@@ -130,8 +130,5 @@
 		transition: all 0.2s ease-in-out;
 		cursor: pointer;
 		border: none;
-	}
-	.theme-button:hover {
-		color: #e2e8f0;
 	}
 </style>

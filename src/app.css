@@ -5,8 +5,6 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
   --bg-slate-50: rgb(243, 244, 246);
   --bg-slate-100: rgb(229, 231, 235);
   --bg-slate-200: rgb(209, 213, 219);
@@ -17,7 +15,23 @@
   --bg-slate-700: rgb(10, 12, 16);
   --bg-slate-800: rgb(5, 6, 8);
   --bg-slate-900: rgb(2, 2, 4);
+  --background-color: var(--bg-slate-50);
 }
+
+.dark {
+  color-scheme: dark;
+  --background-color: var(--bg-slate-600);
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -33,10 +47,6 @@
   }
 }
 
-.dark {
-  color-scheme: dark;
-}
-
 .navbar-link:active {
   position: absolute;
   bottom: 2;
@@ -47,18 +57,7 @@
   transition: 300ms;
 }
 
-#navbarDrowdown {
-  background-color: var(--bg-primary-800);
-  z-index: 4;
-  transform: translateY(-100vh);
-  transition: transform 0.4s ease-in-out, visibility 0.4s;
-  visibility: hidden;
-}
 
-#navbarDrowdown.custom-show {
-  transform: translateY(0);
-  visibility: visible;
-}
 
 /* width */
 ::-webkit-scrollbar {
