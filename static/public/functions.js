@@ -11,7 +11,7 @@
  * @returns The sum of the two numbers.
  */
 
-function add(first: number, second: number) {
+function add(first, second) {
     return first + second;
 }
 
@@ -21,7 +21,7 @@ function add(first: number, second: number) {
  * @param category The category to filter the data with
  * @returns {string[][]} A dynamic array with multiple results.
  */
-function getData(category: string) {
+function getData(category) {
     //Check that we are connected to service
     const g = getGlobal();
 
@@ -52,5 +52,5 @@ function getData(category: string) {
     }
 }
 
-// CustomFunctions.associate("ADD", add);
-// CustomFunctions.associate("GETDATA", getData);
+CustomFunctions.associate("ADD", add);
+CustomFunctions.associate("GETDATA", getData);
