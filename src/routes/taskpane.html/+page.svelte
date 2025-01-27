@@ -1,6 +1,6 @@
 <script>
-	import { addSlide } from '../../example-api/powerpoint';
-	import { writeToCell } from '../../example-api/excel';
+	import { addSlide } from '../../example_addin_func/powerpoint';
+	import { writeToCell } from '../../example_addin_func/excel';
 </script>
 
 <h1 class="bg-secondary-500">This is taskpane</h1>

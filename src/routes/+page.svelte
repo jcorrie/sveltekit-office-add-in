@@ -1,4 +1,25 @@
+<script lang="ts">
+	import RunButton from '../components/buttons/RunButton.svelte';
+	import IconButton from '../components/buttons/IconButton.svelte';
 
+	async function run(): Promise<void> {
+		console.log('run');
+	}
 
-<h1 class="bg-sky-900">home</h1>
-<p>this is the home page.</p>
+	async function roll() {
+		const response = await fetch('/custom_functions');
+		console.log(await response.json());
+	}
+</script>
+
+<div class="grid grid-cols-1 gap-4">
+	<div>
+		<p>this is the home page.</p>
+	</div>
+	<div>
+		<RunButton buttonText="Run" onClick={run} />
+	</div>
+	<div>
+		<IconButton buttonText="Icon" onClick={roll} />
+	</div>
+</div>
