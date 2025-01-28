@@ -24,7 +24,7 @@ export default defineConfig({
 			{
 				entry: "src/app.d.ts",
 				filename: "index.html", // updated this to index.html now we serve the taskpane.html from https:localhost:3000/
-				template: "./taskpane.html",
+				template: ".",
 				injectOptions: {
 					data: {
 						injectScript: `<script src="./main.js"></script>`,
@@ -58,7 +58,7 @@ export default defineConfig({
 		https: await getHttpsOptions(),
 		port: 3000,
 		strictPort: false,
-		open: "./taskpane.html", // opens the correct /taskpane.html when opening browser to view in web
+		open: ".", // opens the correct /taskpane.html when opening browser to view in web
 	},
 });
 

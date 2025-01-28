@@ -11,9 +11,9 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"start": "office-addin-debugging start ./office_manifests/excel_manifest.xml",
-		"stop": "office-addin-debugging stop ./office_manifests/excel_manifest.xml",
-		"validate": "office-toolbox validate -m ./office_manifests/excel_manifest.xml"
+		"start": "office-addin-debugging start ./office_manifests/word_manifest.xml",
+		"stop": "office-addin-debugging stop ./office_manifests/word_manifest.xml",
+		"validate": "office-toolbox validate -m ./office_manifests/word_manifest.xml"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",

@@ -10,8 +10,9 @@
 		isOpen = !isOpen;
 	}
 	const pages = [
-		{ name: 'home', path: '/' },
-		{ name: 'taskpane', path: '/taskpane.html' }
+		{ name: 'Home', path: '/' },
+		{ name: 'Powerpoint', path: '/powerpoint_example' },
+		{ name: 'Word', path: '/word_example' }
 	];
 </script>
 

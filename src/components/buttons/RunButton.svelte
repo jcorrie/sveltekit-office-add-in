@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let buttonText: string;
-	export let onClick: () => Promise<void>;
+	export let onClick: () => Promise<any>;
 
 	let isLoading = false;
 
