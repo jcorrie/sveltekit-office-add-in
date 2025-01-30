@@ -167,10 +167,6 @@
           DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000" />
-        <!-- <bt:Url id="Functions.Metadata.Url"
-          DefaultValue="https://localhost:3000/static/public/functions.json" />
-        <bt:Url id="Functions.Script.Url"
-          DefaultValue="https://localhost:3000/static/public/functions.js" /> -->
 
         <bt:Url id="Functions.Metadata.Url"
           DefaultValue="https://localhost:3000/static/custom_functions/functions.json" />

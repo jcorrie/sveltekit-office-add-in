@@ -1,27 +1,22 @@
 /* global Word console */
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called
-});
-
-export async function getHighlightedText(): Promise<String | null> {
-  let highlightedText: String | null = null;
-  Word.run(async (context) => {
-    // Get the currently selected range in Word
-    const range = context.document.getSelection();
-    range.load("text, font");
-
-    await context.sync();
-
-    // Extract the highlighted portions
-    const highlightedText = range.text
 
 
-  })
-  try {
-    return highlightedText;
-  }
-  catch (error) {
-    console.error(error);
-    return null
-  }
+export async function getHighlightedText(): Promise<string | null> {
+	let highlightedText: string | null = null;
+	try {
+		await Word.run(async (context) => {
+			// Get the currently selected range in Word
+			const range = context.document.getSelection();
+			range.load('text, font');
+
+			await context.sync();
+			console.log(`The selected range is "${range.text}".`);
+			// Extract the highlighted portions
+			highlightedText = range.text;
+		});
+		return highlightedText;
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
 }

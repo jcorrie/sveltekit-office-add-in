@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
+	import RunButton from '../../components/buttons/RunButton.svelte';
 	import { addSlide } from '../../add-in/example_powerpoint';
-	import { writeToCell } from '../../add-in/example_excel';
+	let isLoading: boolean = $state(false);
 </script>
 
-<h1 class="bg-secondary-500">This is taskpane.html</h1>
+<h1 class="bg-secondary-500">This is a powerpoint page.</h1>
 
-<button onclick={addSlide}> Add slide </button>
-<button onclick={writeToCell}> Write to cell </button>
+<div class="w-12 h-6">
+	<RunButton buttonText="Add slide" onClick={addSlide} {isLoading} isDisabled={false} />
+</div>

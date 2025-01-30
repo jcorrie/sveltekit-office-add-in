@@ -4,8 +4,12 @@ import type { Config } from 'tailwindcss';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	darkMode: "selector",
+	darkMode: 'selector',
 	theme: {
+		fontFamily: {
+			sans: ['ui-sans-serif'],
+			serif: ['"PT Static"', 'ui-serif']
+		},
 		extend: {
 			colors: {
 				primary: {
@@ -18,7 +22,7 @@ export default {
 					600: '#31a666',
 					700: '#257f4d',
 					800: '#195733',
-					900: '#0e2f1a',
+					900: '#0e2f1a'
 				},
 
 				secondary: {
@@ -31,11 +35,11 @@ export default {
 					600: '#cc4529',
 					700: '#99351f',
 					800: '#662415',
-					900: '#33120a',
-				},
-			},
-		},
+					900: '#33120a'
+				}
+			}
+		}
 	},
 
-	plugins: [typography, forms],
+	plugins: [typography, forms]
 } satisfies Config;

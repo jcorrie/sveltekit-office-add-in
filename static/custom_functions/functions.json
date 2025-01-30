@@ -1,56 +1,56 @@
 {
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [
-        {
-            "description": "Adds two numbers.",
-            "id": "ADD",
-            "name": "ADD",
-            "parameters": [
-                {
-                    "description": "First number",
-                    "name": "first",
-                    "type": "number"
-                },
-                {
-                    "description": "Second number",
-                    "name": "second",
-                    "type": "number"
-                }
-            ],
-            "result": {
-                "type": "number"
-            }
-        },
-        {
-            "description": "Say hello",
-            "id": "HELLO",
-            "name": "HELLO",
-            "parameters": [
-                {
-                    "description": "The name to say hello to",
-                    "name": "name",
-                    "type": "string"
-                }
-            ],
-            "result": {
-                "type": "string"
-            }
-        },
-        {
-            "description": "Returns data for a given category.",
-            "id": "GETDATA",
-            "name": "GETDATA",
-            "parameters": [
-                {
-                    "description": "The category to filter the data with",
-                    "name": "category",
-                    "type": "string"
-                }
-            ],
-            "result": {
-                "dimensionality": "matrix",
-                "type": "string"
-            }
-        }
-    ]
+	"$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+	"functions": [
+		{
+			"description": "Adds two numbers.",
+			"id": "ADD",
+			"name": "ADD",
+			"parameters": [
+				{
+					"description": "First number",
+					"name": "first",
+					"type": "number"
+				},
+				{
+					"description": "Second number",
+					"name": "second",
+					"type": "number"
+				}
+			],
+			"result": {
+				"type": "number"
+			}
+		},
+		{
+			"description": "Say hello",
+			"id": "HELLO",
+			"name": "HELLO",
+			"parameters": [
+				{
+					"description": "The name to say hello to",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"result": {
+				"type": "string"
+			}
+		},
+		{
+			"description": "Returns data for a given category.",
+			"id": "GETDATA",
+			"name": "GETDATA",
+			"parameters": [
+				{
+					"description": "The category to filter the data with",
+					"name": "category",
+					"type": "string"
+				}
+			],
+			"result": {
+				"dimensionality": "matrix",
+				"type": "string"
+			}
+		}
+	]
 }

@@ -12,7 +12,8 @@
 	const pages = [
 		{ name: 'Home', path: '/' },
 		{ name: 'Powerpoint', path: '/powerpoint_example' },
-		{ name: 'Word', path: '/word_example' }
+		{ name: 'Word', path: '/word_example' },
+		{ name: 'Excel', path: '/excel_example' }
 	];
 </script>
 

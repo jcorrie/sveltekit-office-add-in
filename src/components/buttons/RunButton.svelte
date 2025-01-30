@@ -1,28 +1,22 @@
 <script lang="ts">
-	export let buttonText: string;
-	export let onClick: () => Promise<any>;
-
-	let isLoading = false;
-
-	async function handleClick() {
-		isLoading = true;
-		await onClick();
-		// wait 1 second before resetting the isLoading state
-		setTimeout(() => {
-			isLoading = false;
-		}, 1000);
-	}
+	let {
+		buttonText,
+		onClick,
+		isLoading,
+		isDisabled
+	}: { buttonText: String; onClick: () => Promise<any>; isLoading: boolean; isDisabled: boolean } =
+		$props();
 </script>
 
 <button
 	class="border-2 border-primary-600
     {isLoading
-		? 'text-slate-700 bg-primary-200'
-		: 'hover:text-slate-100 hover:bg-primary-700'}  transition duration-300 m-1 py-2 px-4 h-10 rounded"
-	on:click={handleClick}
+		? 'text-slate-700 bg-primary-300'
+		: 'hover:text-slate-100 hover:bg-primary-700'}  transition duration-300 py-2 px-4 w-full w-full rounded"
+	onclick={onClick}
 	disabled={isLoading}
 >
-	<div class="min-w-24 h-full flex items-center justify-center">
+	<div class=" flex items-center justify-center">
 		{#if isLoading}
 			<svg
 				class="animate-spin h-5 w-5"

@@ -1,17 +1,11 @@
 <script lang="ts">
-	export let buttonText: string;
-	export let onClick: () => Promise<void>;
-
-	let isLoading = false;
-
-	async function handleClick() {
-		isLoading = true;
-		await onClick();
-		// wait 1 second before resetting the isLoading state
-		setTimeout(() => {
-			isLoading = false;
-		}, 1000);
-	}
+	let {
+		buttonText,
+		onClick,
+		isLoading,
+		isDisabled
+	}: { buttonText: String; onClick: () => Promise<any>; isLoading: boolean; isDisabled: boolean } =
+		$props();
 </script>
 
 <div class="flex items-center justify-center">
@@ -20,7 +14,7 @@
     {isLoading
 			? 'text-slate-700 bg-primary-200'
 			: 'hover:text-slate-100 hover:bg-primary-700'} rounded-full transition duration-300 m-1"
-		on:click={handleClick}
+		onclick={onClick}
 		disabled={isLoading}
 	>
 		<div class="h-6 w-6 m-1 items-center justify-center">
