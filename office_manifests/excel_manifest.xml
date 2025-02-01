@@ -169,9 +169,9 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000" />
 
         <bt:Url id="Functions.Metadata.Url"
-          DefaultValue="https://localhost:3000/static/custom_functions/functions.json" />
+          DefaultValue="https://localhost:3000/custom_functions/functions.json" />
         <bt:Url id="Functions.Script.Url"
-          DefaultValue="https://localhost:3000/static/custom_functions/functions.js" />
+          DefaultValue="https://localhost:3000/custom_functions/functions.js" />
 
 
       </bt:Urls>
