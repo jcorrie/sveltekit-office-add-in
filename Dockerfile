@@ -3,6 +3,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
+
+# Update the certificate store using apk
+RUN apk update && apk add --no-cache ca-certificates && update-ca-certificates
+
+
 RUN npm run build
 RUN npm prune --production
 

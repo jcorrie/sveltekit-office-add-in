@@ -1,7 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import * as devCerts from 'office-addin-dev-certs';
-import { resolve } from 'node:path';
+import mkcert from 'vite-plugin-mkcert'
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 async function getHttpsOptions() {
@@ -15,7 +15,7 @@ async function getHttpsOptions() {
 
 export default defineConfig({
 	plugins: [
-		sveltekit(),
+		sveltekit(), mkcert(),
 
 		createHtmlPlugin({
 			minify: true,

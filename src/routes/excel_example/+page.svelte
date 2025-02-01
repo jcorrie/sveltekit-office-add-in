@@ -3,7 +3,7 @@
 	import RunButton from '../../components/buttons/RunButton.svelte';
 	import { writeToCell } from '../../add-in/example_excel';
 	import SearchBar from '../../components/buttons/SearchBar.svelte';
-	import init, { greet } from '../../../wasm/pkg/wasm.js';
+	import init, { greet, regex_extract } from '../../../wasm/pkg/wasm.js';
 
 	let isLoading: boolean = false;
 	let isLoadingBar: boolean = false;
@@ -12,6 +12,8 @@
 		await init();
 		let response = greet('WebAssembly');
 		console.log(response);
+		let extracted = regex_extract(String.raw`\d{2}`, '1234d56lkj0');
+		console.log(extracted);
 	});
 
 	async function handleClick() {

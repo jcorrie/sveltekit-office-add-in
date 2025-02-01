@@ -1,5 +1,28 @@
 /* global Excel console */
 
+import init, { greet, regex_extract } from '../../wasm/pkg/wasm.js';
+
+function getGlobal() {
+	return typeof self !== "undefined"
+		? self
+		: typeof window !== "undefined"
+			? window
+			: typeof global !== "undefined"
+				? global
+				: undefined;
+}
+
+
+
+async function initializeWasm() {
+	await init();
+	console.log(greet("wasm"));
+}
+
+// Initialize the WebAssembly module
+initializeWasm().catch(console.error);
+
+
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
@@ -63,6 +86,28 @@ function getData(category) {
 	}
 }
 
+
+/**
+ * Extracts matching strings useing regex.
+ * @customfunction
+ * @param pattern The regex pattern to extract the string.
+ * @param text The text to apply the regex pattern to.
+ * @returns {string} A dynamic array with multiple results.
+ */
+async function regexExtract(pattern, text) {
+	//Check that we are connected to service
+	const g = getGlobal();
+
+	const rawPattern = String.raw`${pattern}`;
+	const extracted = regex_extract(rawPattern, text);
+
+	return String(extracted);
+}
+
+
+
+
 CustomFunctions.associate('ADD', add);
 CustomFunctions.associate('HELLO', hello);
 CustomFunctions.associate('GETDATA', getData);
+CustomFunctions.associate('REGEXEXTRACT', regexExtract);

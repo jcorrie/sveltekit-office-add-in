@@ -51,6 +51,26 @@
 				"dimensionality": "matrix",
 				"type": "string"
 			}
+		},
+		{
+			"description": "Extracts matching strings using regex.",
+			"id": "REGEXEXTRACT",
+			"name": "REGEXEXTRACT",
+			"parameters": [
+				{
+					"description": "The regex pattern to extract the string",
+					"name": "pattern",
+					"type": "string"
+				},
+				{
+					"description": "The text to apply the regex pattern to",
+					"name": "text",
+					"type": "string"
+				}
+			],
+			"result": {
+				"type": "string"
+			}
 		}
 	]
 }
