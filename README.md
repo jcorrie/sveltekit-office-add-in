@@ -34,7 +34,16 @@ There are three manifests available: PowerPoint, Excel and Word. Please point th
 
 ## Docker
 
+You can build and run a docker container as follows:
 
+```sh
+docker build -t sveltekit-app .
+docker run -p 3000:3000 sveltekit-app
+```
+
+If you are using any rust/wasm components, make sure to build the package first. The binary and bindings will be exported statically (rather than being compiled as part of the docker imaged build).
+
+You may not be able to get the taskpane to launch from the local dockerised node server as it will be under http://127.0.0.1:3000 and there's an https issue of some description. If you run the container on the cloud it should work fine (tested with Azure container registry + web app).
 
 ## Rust?
 
