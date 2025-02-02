@@ -2,11 +2,12 @@
 	import { onMount } from 'svelte';
 	import RunButton from '../../components/buttons/RunButton.svelte';
 	import { writeToCell } from '../../add-in/example_excel';
-	import SearchBar from '../../components/buttons/SearchBar.svelte';
+	import SearchBar from '../../components/SearchBar.svelte';
 	import init, { greet, regex_extract } from '../../../wasm/pkg/wasm.js';
 
 	let isLoading: boolean = false;
 	let isLoadingBar: boolean = false;
+	let searchText: string = $state('');
 
 	onMount(async () => {
 		await init();
@@ -26,6 +27,17 @@
 		}, 1000);
 		console.log('isLoading', isLoading);
 	}
+
+	async function searchFunction() {
+		console.log('Searching...');
+		isLoading = true;
+		// wait 1 second before resetting the isLoading state
+		setTimeout(() => {
+			console.log(searchText);
+			isLoading = false;
+		}, 1000);
+		console.log('isLoading', isLoading);
+	}
 </script>
 
 <div class="grid grid-flow-row-dense grid-cols-3 gap-y-2">
@@ -39,8 +51,9 @@
 		<div class="mx-1 my-2">
 			<SearchBar
 				placeholderText="Search..."
-				searchFunction={handleClick}
+				{searchFunction}
 				isLoading={isLoadingBar}
+				bind:searchText
 			/>
 		</div>
 	</div>

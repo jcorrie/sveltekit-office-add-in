@@ -1,16 +1,17 @@
-FROM node:22-alpine AS builder
+# Build stage
+FROM node:22-bullseye-slim AS builder
 WORKDIR /app
+
+# Install sudo so that certificate installation can succeed
+RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
+
 COPY package*.json ./
 RUN npm ci
 COPY . .
-
-# Update the certificate store using apk
-RUN apk update && apk add --no-cache ca-certificates && update-ca-certificates
-
-
 RUN npm run build
 RUN npm prune --production
 
+# Production stage
 FROM node:22-alpine
 WORKDIR /app
 COPY --from=builder /app/build build/

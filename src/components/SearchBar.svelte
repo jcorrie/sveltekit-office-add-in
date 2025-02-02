@@ -2,20 +2,21 @@
 	let {
 		placeholderText,
 		searchFunction,
-		isLoading
+		isLoading,
+		searchText = $bindable()
 	}: {
 		placeholderText: string;
-		searchFunction: (search: string) => Promise<any>;
+		searchFunction: () => Promise<any>;
 		isLoading: boolean;
+		searchText: string;
 	} = $props();
 
-	let searchQuery: string = $state('');
 </script>
 
 <input
 	type="search"
 	placeholder={placeholderText}
 	class="border-1 border-slate-600 focus:ring-slate-800 focus:ring-1 text-slate-700 transition duration-300 py-2 px-4 w-full w-full rounded"
-	onkeydown={(e) => e.key === 'Enter' && searchFunction(searchQuery)}
-	bind:value={searchQuery}
+	onkeydown={(e) => e.key === 'Enter' && searchFunction()}
+	bind:value={searchText}
 />

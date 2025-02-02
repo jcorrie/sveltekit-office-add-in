@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getHighlightedText } from '../../add-in/example_word';
-	import SearchBar from '../../components/buttons/SearchBar.svelte';
+	import SearchBar from '../../components/SearchBar.svelte';
 	import RunButton from '../../components/buttons/RunButton.svelte';
 	let isLoadingButton: boolean = $state(false);
 	let isLoadingBar: boolean = $state(false);

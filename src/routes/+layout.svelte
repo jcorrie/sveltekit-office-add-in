@@ -18,7 +18,7 @@
 </script>
 
 <div class="relative z-0">
-	<nav class="bg-slate-400 relative dark:bg-slate-800 h-10 z-10">
+	<nav class="bg-slate-700 relative h-10 z-10 text-slate-200">
 		<div class="flex">
 			<button
 				class="p-2 transition hover:text-primary-700 dark:hover:text-primary-300"
