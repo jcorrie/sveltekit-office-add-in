@@ -3,7 +3,7 @@
 	import RunButton from '../../components/buttons/RunButton.svelte';
 	import { writeToCell } from '../../add-in/example_excel';
 	import SearchBar from '../../components/SearchBar.svelte';
-	import init, { greet, regex_extract } from '../../../wasm/pkg/wasm.js';
+	import init, { greet, regex_extract } from "../../../static/wasm/pkg/wasm.js";
 
 	let isLoading: boolean = false;
 	let isLoadingBar: boolean = false;

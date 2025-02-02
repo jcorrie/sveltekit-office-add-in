@@ -1,7 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import mkcert from "vite-plugin-mkcert"
 import * as devCerts from 'office-addin-dev-certs';
-import { createHtmlPlugin } from 'vite-plugin-html';
 
 async function getHttpsOptions() {
     const httpsOptions = await devCerts.getHttpsServerOptions();
@@ -14,7 +14,7 @@ async function getHttpsOptions() {
 
 export default defineConfig({
     plugins: [
-        sveltekit(),
+        sveltekit(), mkcert()
 
     ],
 
@@ -24,7 +24,7 @@ export default defineConfig({
         strictPort: false,
         open: '.', // opens the correct /taskpane.html when opening browser to view in web
         fs: {
-            allow: ['./static/custom_functions', "./wasm"]
+            allow: ['./static/custom_functions', "./static/wasm"]
         }
     },
     preview: {
