@@ -24,7 +24,7 @@ export default defineConfig({
         strictPort: false,
         open: '.', // opens the correct /taskpane.html when opening browser to view in web
         fs: {
-            allow: ['./static/custom_functions', "./static/wasm"]
+            allow: ['./static/custom_functions', "./static/wasm", "./static/commands"]
         }
     },
     preview: {

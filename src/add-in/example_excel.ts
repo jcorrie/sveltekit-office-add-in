@@ -8,3 +8,15 @@ export async function writeToCell() {
 		await context.sync();
 	});
 }
+
+
+Office.onReady(() => {
+	Office.actions.associate('getButton', yellowHighlight);
+});
+export async function yellowHighlight() {
+	Excel.run(async (context) => {
+		const range = context.workbook.getSelectedRange();
+		range.format.fill.color = 'yellow';
+		await context.sync();
+	}).catch(console.error);
+}
